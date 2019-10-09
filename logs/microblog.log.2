@@ -1,4 +1,8 @@
-2019-10-03 18:21:02,394 ERROR: Exception on /user/test3 [GET] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
+2019-10-04 00:14:26,709 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:46]
+2019-10-04 00:16:35,799 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:46]
+2019-10-04 00:18:48,960 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:46]
+2019-10-09 21:49:56,666 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:48]
+2019-10-09 21:50:04,463 ERROR: Exception on / [GET] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,24 +18,44 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 81, in user
-    if posts.has_next else None
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2215, in handle_url_build_error
+  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 36, in index
+    prev_url=prev_url)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint '/user' with values ['page', 'username']. Did you mean 'user' instead?
-2019-10-03 18:23:39,029 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:42]
-2019-10-03 18:28:10,633 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:29:14,068 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:54:28,331 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:55:07,891 ERROR: Exception on /reset_password_request [POST] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/index.html", line 11, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/_post.html", line 12, in top-level template code
+    said {{ moment(post.timesetamp).fromNow() }}:
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 133, in fromNow
+    return self._render("fromNow(%s)" % int(no_suffix), refresh)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 123, in _render
+    t = self._timestamp_as_iso_8601(self.timestamp)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 120, in _timestamp_as_iso_8601
+    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
+jinja2.exceptions.UndefinedError: 'app.models.Post object' has no attribute 'timesetamp'
+2019-10-09 21:50:07,051 ERROR: Exception on /index [GET] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -45,56 +69,42 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 154, in reset_password_request
-    send_password_reset_email(user)
-  File "/home/meth/dev-practice/py-practice/microblog/app/email.py", line 11, in send_password_reset_email
-    token = user.get_reset_passsword_token()
-AttributeError: 'User' object has no attribute 'get_reset_passsword_token'
-2019-10-03 18:55:59,641 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:56:10,996 ERROR: Exception on /reset_password_request [POST] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 36, in index
+    prev_url=prev_url)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 154, in reset_password_request
-    send_password_reset_email(user)
-  File "/home/meth/dev-practice/py-practice/microblog/app/email.py", line 11, in send_password_reset_email
-    token = user.get_reset_password_token()
-  File "/home/meth/dev-practice/py-practice/microblog/app/models.py", line 59, in get_reset_password_token
-    return jwt.encode(
-NameError: name 'jwt' is not defined
-2019-10-03 18:57:07,840 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:57:30,542 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 18:57:38,910 ERROR: Exception on /reset_password_request [POST] [in /home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/meth/dev-practice/py-practice/microblog/app/routes.py", line 154, in reset_password_request
-    send_password_reset_email(user)
-  File "/home/meth/dev-practice/py-practice/microblog/app/email.py", line 13, in send_password_reset_email
-    sender=app.config['ADMINS'][0],
-NameError: name 'app' is not defined
-2019-10-03 18:59:14,681 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 19:03:00,968 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-03 19:06:34,108 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:44]
-2019-10-04 00:09:39,621 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:46]
-2019-10-04 00:10:00,119 INFO: Microblog startup [in /home/meth/dev-practice/py-practice/microblog/app/__init__.py:46]
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/index.html", line 11, in block "app_content"
+    {% include '_post.html' %}
+  File "/home/meth/dev-practice/py-practice/microblog/app/templates/_post.html", line 12, in top-level template code
+    said {{ moment(post.timesetamp).fromNow() }}:
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 133, in fromNow
+    return self._render("fromNow(%s)" % int(no_suffix), refresh)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 123, in _render
+    t = self._timestamp_as_iso_8601(self.timestamp)
+  File "/home/meth/dev-practice/py-practice/microblog/venv/lib/python3.5/site-packages/flask_moment.py", line 120, in _timestamp_as_iso_8601
+    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
+jinja2.exceptions.UndefinedError: 'app.models.Post object' has no attribute 'timesetamp'
