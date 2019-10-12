@@ -22,4 +22,4 @@ class Config(object):
 
     LANGUAGES = ['en', 'es']
 
-    ELASTICSEARCH_URL = os.engiron.get('ELASTICSEARCH_URL')
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
