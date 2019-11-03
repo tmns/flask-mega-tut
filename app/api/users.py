@@ -1,8 +1,18 @@
 from app.api import bp
-from flask import jsonify, request, url_for
+from flask import jsonify, request, url_for, g
 from app.models import User
 from app import db
 from app.api.errors import bad_request
+from app.api import bp
+from app.api.auth import basic_auth
+
+
+@bp.route('/tokens', methods=['POST'])
+@basic_auth.login_required
+def get_token():
+    token = g.current_user.get_token()
+    db.session.commit()
+    return jsonify({'token': token})
 
 
 @bp.route('/users/<int:id>', methods=['GET'])
