@@ -7,14 +7,6 @@ from app.api import bp
 from app.api.auth import basic_auth, token_auth
 
 
-@bp.route('/tokens', methods=['POST'])
-@basic_auth.login_required
-def get_token():
-    token = g.current_user.get_token()
-    db.session.commit()
-    return jsonify({'token': token})
-
-
 @bp.route('/users/<int:id>', methods=['GET'])
 @token_auth.login_required
 def get_user(id):
